@@ -7,7 +7,7 @@ public class Rectangle {
     }
 
     double perimeter() {
-        return (2 * height) + (2 * width);
+        return 2 * (height + width);
     }
 
     double diagonal() {
