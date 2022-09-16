@@ -25,6 +25,9 @@ class Main {
         System.out.print("Rectangle or Circle (r/c)? ");
         String shapeKind = scanner.nextLine();
         Color color = getColor();
+        if(color == null) {
+            return null;
+        }
 
         switch(shapeKind) {
             case "r":
@@ -41,7 +44,7 @@ class Main {
         return null; 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.print("Enter the number of shapes: ");
         int numberOfShapes = Integer.parseInt(scanner.nextLine());
 
@@ -49,6 +52,9 @@ class Main {
 
         while(numberOfShapes > 0) {
             Shape shape = getShape();
+            if(shape == null) {
+                throw new Exception("Shape invalido!");
+            }
             shapes.add(shape);
             numberOfShapes--; 
         }
