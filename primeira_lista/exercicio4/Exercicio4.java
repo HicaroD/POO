@@ -48,7 +48,7 @@ class Main {
         System.out.print("Enter the number of shapes: ");
         int numberOfShapes = Integer.parseInt(scanner.nextLine());
 
-        ArrayList<Shape> shapes = new ArrayList(numberOfShapes);
+        ArrayList<Shape> shapes = new ArrayList<>(numberOfShapes);
 
         while(numberOfShapes > 0) {
             Shape shape = getShape();
