@@ -1,6 +1,6 @@
 package exercicio7;
 
-public class YoutubeVideo implements IVideo {
+public class YoutubeVideo extends Video {
 
     private final int[] bits;
 

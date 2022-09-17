@@ -1,13 +1,13 @@
 package exercicio7;
 
 public class VideoPlayer {
-    private IVideo video;
+    private Video video;
 
-    public VideoPlayer(IVideo video) {
+    public VideoPlayer(Video video) {
         this.video = video;
     }
 
-    public void setVideo(IVideo video) {
+    public void setVideo(Video video) {
         this.video = video;
     }
 

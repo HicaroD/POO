@@ -1,6 +1,6 @@
 package exercicio7;
 
-public class FaceVideo implements IVideo {
+public class FaceVideo extends Video {
 
     private final boolean[] bitsFace;
 
