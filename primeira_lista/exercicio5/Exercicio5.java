@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Exercicio5 {
 
 	public static void main(String[] args) throws ParseException {
-		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -28,7 +27,8 @@ public class Exercicio5 {
 		System.out.print("Status: ");
 		OrderStatus status = OrderStatus.valueOf(sc.next());
 		
-		Order order = new Order(new Date(0), status, client);
+        java.util.Date currentDate = new Date(0);
+		Order order = new Order(currentDate, status, client);
 		
 		System.out.print("How many items to this order? ");
 		int n = sc.nextInt();

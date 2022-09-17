@@ -1,7 +1,5 @@
 package exercicio5;
 
-import java.sql.Date;
-
 public class Client {
     private String name;
     private String email;

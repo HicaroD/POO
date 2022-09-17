@@ -1,16 +1,15 @@
 package exercicio5;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 public class Order {
-    private Date moment;
+    private java.util.Date moment;
     private OrderStatus status;
     private Client client;
     private ArrayList<OrderItem> items;
 
-    public Order(Date date, OrderStatus status, Client client) {
-        this.moment = date;
+    public Order(java.util.Date currentDate, OrderStatus status, Client client) {
+        this.moment = currentDate;
         this.status = status;
         this.client = client;
         this.items = new ArrayList<>();
