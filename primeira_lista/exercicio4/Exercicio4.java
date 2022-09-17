@@ -8,17 +8,7 @@ class Main {
 
     static Color getColor() {
         System.out.print("Color (BLACK/BLUE/RED): ");
-        String colorName = scanner.nextLine();
-        switch (colorName) {
-            case "BLACK":
-                return Color.Black;        
-            case "RED":
-                return Color.Red;
-            case "BLUE":
-                return Color.Blue;
-            default:
-                return null;
-        }
+        return Color.valueOf(scanner.nextLine()); 
     }
 
     static Shape getShape() {
