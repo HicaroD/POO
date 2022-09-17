@@ -34,7 +34,7 @@ public class FaceVideo implements IVideo {
             char currentBit = bitsFace[i] ? '1' : '0';
             currentBinaryString += currentBit;
             if(i % 8 == 0) {
-                int asciiCharacter = (char) Integer.parseInt(currentBinaryString, 2) / 2;
+                int asciiCharacter = Integer.parseInt(currentBinaryString, 2) / 2;
                 content += (char)asciiCharacter;
                 currentBinaryString = "";
             }
