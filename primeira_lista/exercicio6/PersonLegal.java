@@ -1,9 +1,5 @@
 package exercicio6;
 
-class CnpjValidator {
-
-}
-
 class PersonLegal extends Person {
     private String cnpj;
 
@@ -18,7 +14,6 @@ class PersonLegal extends Person {
 
     @Override
     public boolean isValid() {
-        // TODO: não encontrei código em java para checar se cnpj é válido
-        return false; 
+        return CnpjValidator.isCNPJ(cnpj); 
     }
 }
