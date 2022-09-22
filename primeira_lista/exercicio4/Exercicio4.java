@@ -1,57 +1,46 @@
 package exercicio4;
 
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-class Main {
-    static Scanner scanner = new Scanner(System.in);
+public class Exercicio4 { 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of shapes: ");
+        int quantidadeDeShapes = scanner.nextInt();
+        ArrayList<Shape> shapes = new ArrayList<>();
 
-    static Color getColor() {
-        System.out.print("Color (BLACK/BLUE/RED): ");
-        return Color.valueOf(scanner.nextLine()); 
-    }
+        for (int i = 0; i < quantidadeDeShapes; i++) {
+            System.out.printf("Shape %d data: \n", i + 1);
+            System.out.print("Rectangle or Circle (r/c)? ");
+            scanner.nextLine(); 
+            String tipoDoShape = scanner.nextLine();
+            System.out.print("Color (RED/BLACK/BLUE)? ");
+            String colorName = scanner.nextLine();
+            Color color = Color.valueOf(colorName);
 
-    static Shape getShape() {
-        System.out.print("Rectangle or Circle (r/c)? ");
-        String shapeKind = scanner.nextLine();
-        Color color = getColor();
-        if(color == null) {
-            return null;
-        }
-
-        switch(shapeKind) {
-            case "r":
-                System.out.print("Width: ");
-                double width = Double.parseDouble(scanner.nextLine());
-                System.out.print("Height: ");
-                double height = Double.parseDouble(scanner.nextLine());
-                return new Rectangle(width, height); 
-            case "c":
-                System.out.print("Radius: ");
-                double radius = Double.parseDouble(scanner.nextLine());
-                return new Circle(radius); 
-        }
-        return null; 
-    }
-
-    public static void main(String[] args) throws Exception {
-        System.out.print("Enter the number of shapes: ");
-        int numberOfShapes = Integer.parseInt(scanner.nextLine());
-
-        ArrayList<Shape> shapes = new ArrayList<>(numberOfShapes);
-
-        while(numberOfShapes > 0) {
-            Shape shape = getShape();
-            if(shape == null) {
-                throw new Exception("Shape invalido!");
+            if(tipoDoShape.equals("r")) {
+                System.out.println("Choose width and height: ");
+                double width = scanner.nextDouble();
+                double height = scanner.nextDouble();
+                Rectangle rect = new Rectangle(color, width, height);
+                shapes.add(rect);
+            } 
+            else if (tipoDoShape.equals("c")) {
+                System.out.println("Choose radius: ");
+                double radius = scanner.nextDouble();
+                Circle circle = new Circle(color, radius);
+                shapes.add(circle);
+            } 
+            else {
+                break;
             }
-            shapes.add(shape);
-            numberOfShapes--; 
         }
 
-        System.out.println("SHAPE AREAS: ");
-        for (Shape shape : shapes) {
-            System.err.printf("%.2f\n", shape.area());
+        System.out.println("SHAPE AREAS:");
+        for(Shape shape : shapes) {
+            System.out.println(shape.area());
         }
+        scanner.close(); 
     }
 }
