@@ -1,6 +1,5 @@
 package exercicio9;
 
-
 class Main {
     public static void main(String[] args) {
         int[] arr = {-10, -20, 2, 3, 1, 10};

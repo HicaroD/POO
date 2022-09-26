@@ -41,4 +41,8 @@ public class Email {
     public String getMensagem() {
         return mensagem;
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
 }

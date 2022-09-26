@@ -19,6 +19,10 @@ public class Order {
         items.add(orderItem);
     }
 
+    public void removeItem(OrderItem orderItem) {
+        items.remove(orderItem);
+    }
+
     public double total() {
         // return items.stream().mapToDouble(item -> item.subTotal()).sum();
         double sum = 0;

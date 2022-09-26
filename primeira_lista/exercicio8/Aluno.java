@@ -9,7 +9,6 @@ public class Aluno {
     private ArrayList<Nota> notas;
 
     public Aluno(String nomeCompleto, String matricula, ArrayList<Nota> notas) {
-        // FIXME: não sei se é a "melhor" maneira de validar parâmetros
         if (!validateNotas(notas)) {
             System.err.println("Número de matrícula invalido");
             System.exit(1);
