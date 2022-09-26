@@ -19,8 +19,8 @@ public class YoutubeVideo extends Video {
     @Override
     public String getContent() {
         String content = "";
-        for(int i = 0; i < bits.length; i++) {
-            content += (char)bits[i];
+        for(int bit : bits) {
+            content += (char)bit;
         }
         return content;
     }

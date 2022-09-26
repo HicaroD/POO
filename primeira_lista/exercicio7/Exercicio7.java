@@ -1,12 +1,12 @@
 package exercicio7;
 
-class Exercicio7 {
-    public static void main(String[] args) { 
+public class Exercicio7 {
+    public static void main(String[] args) {
         YoutubeVideo youtubeVideo = new YoutubeVideo(); 
         FaceVideo faceVideo = new FaceVideo(); 
-        VideoPlayer videoPlayer = new VideoPlayer(youtubeVideo);
+        VideoPlayer videoPlayer = new VideoPlayer(faceVideo);
         videoPlayer.play();
-        videoPlayer.setVideo(faceVideo);
+        videoPlayer.video = youtubeVideo;
         videoPlayer.play();
-    }
+    } 
 }
