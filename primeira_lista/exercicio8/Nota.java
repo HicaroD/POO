@@ -1,36 +1,33 @@
 package exercicio8;
 
 public class Nota {
-    private double valor;
-    private String nomeDoAssunto;
+    public double valor;
+    public String nomeDoAssunto;
 
     public Nota(double valor, String nomeDoAssunto) {
         this.valor = valor;
         this.nomeDoAssunto = nomeDoAssunto;
-    }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        if (valor <= 0 && valor >= 10) {
-            System.err.println("Nota inválida");
+        if(!IsNotaValid()) {
+            System.out.println("Nota invalida");
             System.exit(1);
         }
-        this.valor = valor;
+        if(!isNomeDoAssuntoValid()) {
+            System.out.println("Nome do assunto invalido");
+            System.exit(1);
+        }
     }
 
-    public String getNomeDoAssunto() {
-        return nomeDoAssunto;
+    public boolean IsNotaValid() {
+        return valor >= 0 && valor <= 10;
     }
 
-    public void setNomeDoAssunto(String nomeDoAssunto) {
-        this.nomeDoAssunto = nomeDoAssunto;
+    public boolean isNomeDoAssuntoValid() {
+        return nomeDoAssunto.length() != 0;
     }
 
     @Override
     public String toString() {
-        return nomeDoAssunto + ": " + valor + "\n";
+        return String.format("%s: %f", nomeDoAssunto, valor);
     }
 }
